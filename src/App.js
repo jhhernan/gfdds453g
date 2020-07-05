@@ -11,9 +11,20 @@ export class App extends Component {
     return (
       <div>
         <nav>
-          {/*Aca deben ir los links de navegacion*/}
+          {<div>
+            <Link to="/page1">Page 1</Link>
+          <Link to="/page2">Page 2</Link>
+          </div>
+          }
         </nav>
-        {/* Aca tienes que agreager algo para que las rutas funcionen*/}
+        {/* Aca tienes que agreager algo para que las rutas funcionen*/
+        <Switch>
+          <Route exact path="/" component={Page1} ></Route>
+          <Route exact path="/page1" component={Page1} ></Route>
+          <Route exact path="/page2" component={Page2} ></Route>
+          <Route exact path="*"  component={NotFound}></Route>
+        </Switch>
+        }
       </div>
     )
   }
